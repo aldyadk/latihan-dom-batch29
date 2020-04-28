@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <title>Contoh Webpage Standard</title>
+    <style>
+        h1 {
+          font-size:20px;  
+        }
+
+        #page-title{
+            color:red;
+        }
+
+        .page-box{
+            background-color: orange;
+        }
+
+        .page-box-2{
+            background-color: yellowgreen;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="page-title">Sample Page Title</div>
+    <h1>Test Sample Heading</h1>
+    <div class="page-box">Page Box 1</div>
+    <div class="page-box">Page Box 2</div>
+    <div class="page-box">Page Box 3</div>
+    <div class="page-box">Page Box 4</div>
+    <div class="page-box">Page Box 5</div>
+    <div class="page-box">Page Box 6</div>
+    <script>
+        //SELECTOR
+        var pageTitle = document.getElementById('page-title');
+        var pageBoxElements = document.getElementsByClassName('page-box');
+        var pageHeadings = document.getElementsByTagName('h1');
+
+        //GETTER
+        console.log('ini adalah ID dari title', pageTitle.id);
+        console.log(pageTitle.style)
+        for(var i=0; i<pageBoxElements.length; i++){
+            console.log(`ini adalah CLASS box ke ${i}`, pageBoxElements[i].className );
+        }
+        for(var i=0; i<pageHeadings.length; i++){
+            console.log(`ini adalah KONTEN HTML heading ke ${i}`, pageHeadings[i].innerHTML );
+        }
+
+        //SETTER
+        pageTitle.innerHTML = "<i>Ini nilai baru</i>"
+        for(var i=0; i<pageBoxElements.length; i++){
+            pageBoxElements[i].innerHTML = pageBoxElements[i].innerHTML.toUpperCase();
+            if(i%2===0){
+                pageBoxElements[i].style.backgroundColor = 'cadetblue'
+            } else {
+                pageBoxElements[i].style.backgroundColor = 'darkseagreen'
+            }
+            
+        }
+        for(var i=0; i<pageHeadings.length; i++){
+            pageHeadings[i].innerHTML = pageHeadings[i].innerHTML.toUpperCase();
+            pageHeadings[i].style.fontSize = '35px';
+        }
+        
+    </script>
+  </body>
+</html>
